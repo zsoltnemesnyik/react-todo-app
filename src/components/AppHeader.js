@@ -4,7 +4,7 @@ const AppHeader = () => {
   return (
     <div>
         <h1>hello from header</h1>
-        <Button variant="secondary">
+        <Button variant="primary">
             click me
         </Button>
     </div>
