@@ -6,6 +6,8 @@ const getInitialTodo = () => {
     if (localTodoList) {
         return JSON.parse(localTodoList)
     }
+
+    
 }
 
 const initialValue = {
@@ -29,7 +31,12 @@ export const todoSlice = createSlice({
                 });
 
                 window.localStorage.setItem('todoList', JSON.stringify(todoListArr))
+            } else {
+                window.localStorage.setItem('todoList', JSON.stringify(...action.payload))
             }
         }
     }
 })
+
+export const {addTodo} = todoSlice.actions;
+export default todoSlice.reducer;
